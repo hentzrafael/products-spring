@@ -20,6 +20,11 @@ public class ProductModel  extends RepresentationModel<ProductModel> implements 
     private String name;
     private BigDecimal value;
 
+    //Relations
+    @ManyToOne
+    @JoinColumn(name = "estabelecimento_id")
+    private EstabelecimentoModel estabelecimento;
+
     public UUID getIdProduct() {
         return idProduct;
     }
