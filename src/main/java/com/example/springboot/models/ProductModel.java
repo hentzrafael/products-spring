@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 import java.util.UUID;
 
 @Entity
-@Table(name = "TB_PRODUCTS")
+@Table(name = "products")
 public class ProductModel  extends RepresentationModel<ProductModel> implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
@@ -22,8 +22,8 @@ public class ProductModel  extends RepresentationModel<ProductModel> implements 
 
     //Relations
     @ManyToOne
-    @JoinColumn(name = "estabelecimento_id")
-    private EstabelecimentoModel estabelecimento;
+    @JoinColumn(name = "store_id")
+    private StoreModel store;
 
     public UUID getIdProduct() {
         return idProduct;

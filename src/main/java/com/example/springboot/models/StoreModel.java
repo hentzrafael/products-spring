@@ -7,14 +7,14 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.UUID;
 
-@Entity(name = "TB_ESTABELECIMENTOS")
-public class EstabelecimentoModel implements Serializable {
+@Entity(name = "stores")
+public class StoreModel implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID idEstabelecimento;
+    private UUID idStore;
 
     @Column(unique = true, nullable = false)
     private String cnpj;
@@ -27,15 +27,15 @@ public class EstabelecimentoModel implements Serializable {
     private String passwordSalt;
 
     //Relations
-    @OneToMany(mappedBy = "estabelecimento")
+    @OneToMany(mappedBy = "store")
     private List<ProductModel> products;
 
-    public UUID getIdEstabelecimento() {
-        return idEstabelecimento;
+    public UUID getIdStore() {
+        return idStore;
     }
 
-    public void setIdEstabelecimento(UUID idEstabelecimento) {
-        this.idEstabelecimento = idEstabelecimento;
+    public void setIdStore(UUID idStore) {
+        this.idStore = idStore;
     }
 
     public String getCnpj() {
