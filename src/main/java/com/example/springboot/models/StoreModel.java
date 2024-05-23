@@ -30,6 +30,10 @@ public class StoreModel implements Serializable {
     @OneToMany(mappedBy = "store")
     private List<ProductModel> products;
 
+    @OneToOne
+    @JoinColumn(name = "address_id")
+    private AddressModel address;
+
     public UUID getIdStore() {
         return idStore;
     }

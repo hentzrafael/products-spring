@@ -6,6 +6,7 @@ import org.springframework.hateoas.RepresentationModel;
 import java.io.Serial;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -24,6 +25,12 @@ public class ProductModel  extends RepresentationModel<ProductModel> implements 
     @ManyToOne
     @JoinColumn(name = "store_id")
     private StoreModel store;
+
+    @OneToMany(mappedBy = "product")
+    private List<CommentModel> comments;
+
+    @ManyToMany(mappedBy = "products")
+    private List<CategoryModel> categories;
 
     public UUID getIdProduct() {
         return idProduct;
