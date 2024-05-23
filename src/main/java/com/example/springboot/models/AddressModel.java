@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.List;
 import java.util.UUID;
 
 @Entity(name = "addresses")
@@ -25,4 +26,11 @@ public class AddressModel implements Serializable {
     //Relations
     @OneToOne(mappedBy = "address")
     private StoreModel store;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private UserModel user;
+
+    @OneToMany(mappedBy = "address")
+    private List<OrderModel> orders;
 }

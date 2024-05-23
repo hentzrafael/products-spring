@@ -32,6 +32,9 @@ public class ProductModel  extends RepresentationModel<ProductModel> implements 
     @ManyToMany(mappedBy = "products")
     private List<CategoryModel> categories;
 
+    @ManyToMany(mappedBy = "products")
+    private List<OrderModel> orders;
+
     public UUID getIdProduct() {
         return idProduct;
     }
