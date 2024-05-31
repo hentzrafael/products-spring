@@ -1,5 +1,6 @@
 package com.example.springboot.models;
 
+import com.example.springboot.user.models.UserModel;
 import jakarta.persistence.*;
 
 import java.io.Serial;
